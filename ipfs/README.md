@@ -1,11 +1,19 @@
-This is a [Next.js]
+# Web3-Pinata-IPFS-Real-Estate-App
 
-## Getting Started
+Real Estate Listing App and use IPFS as a Database and store all listing data with Pinata
 
-First, run the development server:
+Steps to use Repo
 
-```bash
-npm run dev
+1-Git Clone Repo.
+
+2- Navigate to Project Folder and Install
 
 ```
+npm install
+```
 
+3- Run Project
+
+```
+npm run dev
+```
