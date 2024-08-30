@@ -1,6 +1,8 @@
 import { sendJSONToIPFS, sendFileToIPFS } from "@/components/pinata";
 import { useState } from "react";
 import { ipfsgateway, pinatajwt } from "@/components/config";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function List() {
   const [picture, getPicture] = useState("pinatalogo.png");
@@ -77,11 +79,13 @@ export default function List() {
       getaddress
     );
     if (receipt == "complete") {
-      let confirmation = "Listed Successfully";
-      document.getElementById("displayresult").innerHTML = confirmation;
+      // let confirmation = "Listed Successfully";
+      toast.success(`Listed Successfully`);
+      // document.getElementById("displayresult").innerHTML = confirmation;
     } else {
-      let confirmation = "Info not completed";
-      document.getElementById("displayresult").innerHTML = confirmation;
+      // let confirmation = "Info not completed";
+      // document.getElementById("displayresult").innerHTML = confirmation;
+      toast.error(`Failed to list, Provide Full Details`);
     }
   }
 
@@ -433,6 +437,7 @@ export default function List() {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }
